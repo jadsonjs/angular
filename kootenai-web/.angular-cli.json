@@ -1,0 +1,77 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "kootenai-web"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../src/assets/sbadmin2/vendor/metisMenu/metisMenu.min.css",
+        "../src/assets/sbadmin2/vendor/font-awesome/css/font-awesome.min.css",
+        "../src/assets/sbadmin2/dist/css/sb-admin-2.css",
+        "styles.css"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../src/assets/sbadmin2/vendor/metisMenu/metisMenu.min.js",
+        "../src/assets/sbadmin2/vendor/flot/excanvas.min.js",
+        "../src/assets/sbadmin2/vendor/flot/jquery.flot.js",
+        "../src/assets/sbadmin2/vendor/flot/jquery.flot.pie.js",
+        "../src/assets/sbadmin2/vendor/flot/jquery.flot.resize.js",
+        "../src/assets/sbadmin2/vendor/flot/jquery.flot.time.js",
+        "../src/assets/sbadmin2/vendor/flot-tooltip/jquery.flot.tooltip.min.js",
+        "../src/assets/sbadmin2/data/flot-data.js",
+        "../src/assets/sbadmin2/dist/js/sb-admin-2.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "test": "environments/environment.test.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}
