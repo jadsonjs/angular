@@ -1,0 +1,79 @@
+
+<!-- HTML of the item-cadastro component -->
+
+<!-- manual table
+<table>
+  <tr>
+      <th>Etiqueta</th>
+      <th>Descrição</th>
+      <th>Data Aquisição</th>
+  </tr>
+   ngFor is an angular estructural directive
+
+
+   item is the name of variable
+   fixItens is the name of variable inside of component
+
+
+  <tr *ngFor="let item of fixItens">
+      <td>{{item.etiqueta}}</td>
+      <td>{{item.descricao}}</td>
+      <td>{{item.dataAquisicao | date:'dd/MM/yyyy'}}</td>   pipe of date in angular
+  </tr>
+</table>
+
+-->
+
+<!--
+--  On submit the form, call the method "adicionar", passing "f", that is
+-- the variable of ngForm
+-->
+
+<form #frm="ngForm" (ngSubmit)="adicionar(frm)">
+
+<div class="ui-g">
+  <div class="ui-g-12">
+      <h1>Gestão de Patrimônio</h1>
+  </div>
+
+   <div class="ui-g-6 ui-fluid">
+     <label>Equiqueta</label>
+     <p-inputMask name="etiqueta" mask="aa9999" ngModel [required]="true"></p-inputMask>
+   </div>
+
+   <div class="ui-g-6 ui-fluid">
+     <label>Data Aquisição</label>
+     <p-calendar name="dataAquisicao" dateFormat="dd/mm/yy" ngModel [required]="true"></p-calendar>
+   </div>
+
+   <div class="ui-g-12 ui-fluid">
+     <label>Descrição</label>
+     <input pInputText name="descricao" ngModel [required]="true">
+   </div>
+
+   <div class="ui-g-12">
+     <button pButton type="submit" label="Adicionar" [disabled]="frm.invalid"></button>
+   </div>
+
+
+</div>
+
+<!-- Using primeng -->
+
+<div class="ui-g">
+  <div class="ui-g-12">
+    <p-dataTable [value]="itens">
+       <p-column field="etiqueta" header="Etiqueta"></p-column>
+       <p-column field="descricao" header="Descrição"></p-column>
+       <p-column  header="Data Aquisição">
+          <ng-template pTemplate="body" let-nameVariable="rowData">
+                {{nameVariable.dataAquisicao  | date:'dd/MM/yyyy'}}
+          </ng-template>
+       </p-column>
+    </p-dataTable>
+</div>
+
+</div>
+
+
+</form>
